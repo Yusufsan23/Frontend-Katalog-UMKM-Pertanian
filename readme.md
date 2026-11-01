@@ -30,4 +30,4 @@ katalog-umkm-pertanian/
 
 ## 📸 Tangkapan layar
 
-![Tampilan Web Katalog Dengan Inspect Console](katalog-umkm-pertanian/assets/images/image.png)
+![Tampilan Web Katalog Dengan Inspect Console](assets/images/image.png)
