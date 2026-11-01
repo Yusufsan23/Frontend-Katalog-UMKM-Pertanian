@@ -1,0 +1,367 @@
+/* =========================================
+   1. RESET & VARIABLES (Tema Aesthetic Red-Orange)
+========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+    /* Palet Utama (Merah & Oranye) */
+    --primary: #dc2626;
+    /* Merah */
+    --primary-hover: #b91c1c;
+    --secondary: #f97316;
+    /* Oranye */
+    --secondary-hover: #ea580c;
+
+    /* Warna Netral & Latar */
+    --bg-color: #f8fafc;
+    --card-bg: #ffffff;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --border: #e2e8f0;
+
+    /* Status (Aksi) */
+    --success: #10b981;
+    --info: #0ea5e9;
+    --danger: #ef4444;
+
+    /* Efek & Ukuran */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --radius-md: 8px;
+    --radius-lg: 12px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+/* =========================================
+   2. HEADER & CONTAINER
+========================================= */
+.app-header {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: white;
+    padding: 25px 20px;
+    text-align: center;
+    box-shadow: var(--shadow-md);
+}
+
+.app-header h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    letter-spacing: 0.5px;
+}
+
+.app-header p {
+    font-size: 0.95rem;
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+.container {
+    padding: 20px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* =========================================
+   3. KOTAK FORM & KATALOG (CARD BASE)
+========================================= */
+.form-section,
+.catalog-section {
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 25px;
+    border-top: 4px solid var(--primary);
+    /* Aksen garis merah di atas */
+}
+
+.form-section h2,
+.catalog-section h2 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: var(--text-main);
+    border-bottom: 2px dashed var(--border);
+    padding-bottom: 10px;
+}
+
+/* =========================================
+   4. FORMULIR INPUT
+========================================= */
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    font-size: 0.9rem;
+    color: var(--text-main);
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    font-size: 0.95rem;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    background-color: #fbfcfd;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--secondary);
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.15);
+    /* Efek cahaya oranye */
+}
+
+.error-msg {
+    color: var(--danger);
+    font-size: 0.8rem;
+    display: block;
+    min-height: 1.2em;
+    margin-top: 6px;
+    font-weight: 500;
+}
+
+/* =========================================
+   5. TOMBOL UTAMA
+========================================= */
+button {
+    font-family: inherit;
+}
+
+.btn-primary,
+.btn-secondary {
+    border: none;
+    padding: 12px 20px;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 12px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(220, 38, 38, 0.2);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(220, 38, 38, 0.3);
+}
+
+.btn-secondary {
+    background-color: #e2e8f0;
+    color: var(--text-main);
+}
+
+.btn-secondary:hover {
+    background-color: #cbd5e1;
+}
+
+/* =========================================
+   6. KATALOG & KARTU PRODUK (GRID)
+========================================= */
+.summary-box {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    /* Elegan Gelap */
+    padding: 20px;
+    border-radius: var(--radius-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffffff;
+    margin-bottom: 25px;
+    box-shadow: var(--shadow-sm);
+}
+
+.summary-box span {
+    font-size: 0.95rem;
+    color: #cbd5e1;
+}
+
+.summary-box strong {
+    font-size: 1.4rem;
+    color: var(--secondary);
+    /* Angka menonjol warna oranye */
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* Default Mobile: 1 Kolom */
+    gap: 15px;
+}
+
+.product-card {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    padding: 20px;
+    border-radius: var(--radius-lg);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--secondary);
+}
+
+.badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--secondary) 0%, #f59e0b 100%);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.product-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 8px;
+    color: var(--text-main);
+    font-weight: 600;
+}
+
+.product-card .price {
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* Tombol Aksi di dalam Kartu */
+.card-actions {
+    display: flex;
+    gap: 10px;
+    border-top: 1px dashed var(--border);
+    padding-top: 15px;
+}
+
+.btn-action {
+    flex: 1;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: var(--radius-md);
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-edit {
+    background: var(--info);
+}
+
+.btn-edit:hover {
+    background: #0284c7;
+}
+
+.btn-delete {
+    background: var(--danger);
+}
+
+.btn-delete:hover {
+    background: var(--primary-hover);
+}
+
+/* =========================================
+   7. TOAST NOTIFICATION (MELAYANG)
+========================================= */
+.toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 25px;
+    border-radius: var(--radius-md);
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.95rem;
+    opacity: 0;
+    transform: translateY(-20px) scale(0.9);
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: 9999;
+    pointer-events: none;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.toast.success {
+    background-color: var(--success);
+}
+
+.toast.danger {
+    background-color: var(--danger);
+}
+
+.toast.info {
+    background-color: var(--info);
+}
+
+/* =========================================
+   8. RESPONSIVE SCALE (TABLET & DESKTOP)
+========================================= */
+@media (min-width: 768px) {
+    .container {
+        max-width: 1100px;
+        display: grid;
+        grid-template-columns: 350px 1fr;
+        /* Membagi layar: Form di kiri, Katalog di kanan */
+        gap: 30px;
+        align-items: start;
+        padding: 40px 20px;
+    }
+
+    .form-section,
+    .catalog-section {
+        margin-bottom: 0;
+        /* Reset margin karena sudah diurus oleh gap Grid */
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* Kartu jadi 2 Kolom menyamping */
+    }
+}
+
+@media (min-width: 1024px) {
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+        /* Kartu jadi 3 Kolom di layar besar */
+    }
+}

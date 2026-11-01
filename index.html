@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog UMKM Pertanian</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <header class="app-header">
+        <h1>Katalog UMKM Pertanian</h1>
+        <p>Sistem Manajemen Produk Unggulan Tani</p>
+    </header>
+
+    <main class="container">
+        <!-- Bagian Input Data -->
+        <section class="form-section">
+            <h2>Tambah Produk Baru</h2>
+            <form id="product-form" novalidate>
+                <div class="form-group">
+                    <label for="product-name">Nama Produk</label>
+                    <input type="text" id="product-name" placeholder="Contoh: Pupuk Kompos Organik">
+                    <small class="error-msg" id="name-error"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="product-category">Kategori</label>
+                    <select id="product-category">
+                        <option value="Pupuk">Pupuk</option>
+                        <option value="Bibit">Bibit / Benih</option>
+                        <option value="Alat Tani">Alat Tani</option>
+                        <option value="Hasil Panen">Hasil Panen</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="product-price">Harga (Rp)</label>
+                    <input type="number" id="product-price" placeholder="Contoh: 50000" min="1">
+                    <small class="error-msg" id="price-error"></small>
+                </div>
+
+                <!-- Tombol ini akan berubah teksnya saat mode Edit -->
+                <button type="submit" class="btn-primary" id="btn-submit">Simpan Produk</button>
+                <button type="button" class="btn-secondary" id="btn-cancel" style="display: none;">Batal Edit</button>
+            </form>
+        </section>
+
+        <!-- Bagian Render Data DOM -->
+        <section class="catalog-section">
+            <h2>Daftar Produk</h2>
+            <div class="summary-box">
+                <span>Total Valuasi Aset:</span>
+                <strong id="total-valuation">Rp 0</strong>
+            </div>
+
+            <div class="product-grid" id="product-grid">
+                <!-- Elemen Card akan dirender di sini oleh ui.js -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Wadah untuk Notifikasi Toast (Pembaruan) -->
+    <div id="toast-container" class="toast"></div>
+
+    <!-- Entry Point JavaScript Modular -->
+    <script type="module" src="assets/js/main.js"></script>
+</body>
+
+</html>
