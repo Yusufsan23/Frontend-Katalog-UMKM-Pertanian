@@ -9,12 +9,9 @@ const refreshUI = () => {
     renderCatalog(products, 'product-grid');
     const totalValuation = calculateTotalValuation();
     renderTotal(calculateTotalValuation(), 'total-valuation');
+    console.log("Data Produk saat ini di memori:", products);
     console.log("Total Valuasi Aset Saat Ini: Rp ", totalValuation.toLocaleString('id-ID'));
 };
-
-// Inisialisasi: Render data pertama kali saat halaman dibuka
-const products = getProducts();
-console.log("Data Produk saat ini di memori:", products);
 
 // Helper: Kembalikan Form ke Mode Tambah Default (Dengan Pengaman Null)
 const resetFormMode = () => {
@@ -99,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!target.classList.contains('btn-action')) return;
 
         const productId = Number(target.dataset.id);
-        
+
 
         // JIKA KLIK TOMBOL HAPUS
         if (target.classList.contains('btn-delete')) {

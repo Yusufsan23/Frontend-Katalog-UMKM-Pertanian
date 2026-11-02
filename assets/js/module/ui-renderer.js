@@ -34,8 +34,11 @@ export const renderTotal = (total, elementId) => {
 
 
 export const renderErrors = (errors) => {
-    document.getElementById('name-error').textContent = errors.name;
-    document.getElementById('price-error').textContent = errors.price;
+    const nameErr = document.getElementById('name-error');
+    if (nameErr) nameErr.textContent = errors.name || '';
+
+    const priceErr = document.getElementById('price-error');
+    if (priceErr) priceErr.textContent = errors.price || '';
 };
 
 // Fitur Baru: Menampilkan Notifikasi Toast (Melayang)
