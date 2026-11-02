@@ -29,13 +29,13 @@ export const updateProduct = (id, updatedData) => {
     }
 };
 
-// Penggunaan HOF: .filter()
+// Penggunaan HOF(Higher-Order Functions): .filter()
 export const deleteProduct = (id) => {
     agriculturalProducts = agriculturalProducts.filter(p => p.id !== id);
     saveToStorage();
 };
 
-// Penggunaan HOF: .reduce()
+// Penggunaan HOF(Higher-Order Functions): .reduce()
 export const calculateTotalValuation = () => {
     return agriculturalProducts.reduce((total, product) => total + product.price, 0);
 };
