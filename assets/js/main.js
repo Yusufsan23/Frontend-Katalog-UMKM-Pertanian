@@ -139,4 +139,29 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
+
+    // ==========================================
+    // 5. EVENT HANDLING: Pencarian Produk (Filter Real-Time)
+    // ==========================================
+    // Ambil elemen input pencarian
+    const searchInput = document.getElementById('search-input');
+
+    // EVENT HANDLING: Pencarian Produk (Real-time Filter)
+    if (searchInput) {
+        searchInput.addEventListener('input', (event) => {
+            // Ambil teks yang diketik pengguna dan ubah ke huruf kecil
+            const keyword = event.target.value.toLowerCase();
+            
+            // Ambil seluruh data produk dari memori
+            const allProducts = getProducts();
+            
+            // Gunakan HOF .filter() untuk mencocokkan nama produk
+            const filteredProducts = allProducts.filter(product => 
+                product.name.toLowerCase().includes(keyword)
+            );
+            
+            // Render ulang grid produk HANYA dengan data hasil filter
+            renderCatalog(filteredProducts, 'product-grid');
+        });
+    }
 });
