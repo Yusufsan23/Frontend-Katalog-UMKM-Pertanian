@@ -65,11 +65,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 // AKSI: UPDATE DATA
                 updateProduct(parseInt(editId), { name, category, price });
                 showNotification('Produk berhasil diperbarui!', 'success');
+                console.log(`Produk dengan ID ${editId} telah diperbarui.`);
             } else {
                 // AKSI: TAMBAH DATA BARU
                 const newProduct = { id: Date.now(), name, category, price };
                 addProduct(newProduct);
                 showNotification('Produk baru berhasil ditambahkan!', 'success');
+                console.log('Produk baru ditambahkan:', newProduct);
             }
 
             // KEMBALIKAN KE MODE AWAL & RENDER ULANG (REAL-TIME)
@@ -104,6 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // AKSI: HAPUS DATA
                 deleteProduct(productId);
                 showNotification('Produk berhasil dihapus!', 'danger');
+                console.log(`Produk dengan ID ${productId} telah dihapus.`);
 
                 // RENDER ULANG (REAL-TIME)
                 refreshUI(); // <--- Baris ini yang membuat produk langsung hilang!
@@ -123,9 +126,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Ubah status antarmuka form menjadi Mode Edit
                 form.dataset.editId = product.id;
-                document.getElementById('form-title').textContent = 'Edit Produk';
-                document.getElementById('btn-submit').textContent = 'Update Data';
-                btnCancel.style.display = 'block';
+                const formTitle = document.getElementById('form-title');
+                if (formTitle) formTitle.textContent = 'Edit Produk';
+
+                const btnSubmit = document.getElementById('btn-submit');
+                if (btnSubmit) btnSubmit.textContent = 'Update Data';
+
+                if (btnCancel) btnCancel.style.display = 'block';
 
                 // Animasi scroll halus ke arah form
                 form.scrollIntoView({ behavior: 'smooth' });
